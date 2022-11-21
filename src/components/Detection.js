@@ -9,8 +9,6 @@ tf.setBackend("webgl");
 
 export const Detection = () => {
   const canvasRef = useRef(null);
-  const imageRef = useRef(null);
-
   const [imageUrl, setImageUrl] = useState(null);
 
   let canvas = canvasRef.current;
@@ -57,13 +55,9 @@ export const Detection = () => {
 
   return (
     <div>
-      {/* <button onClick={() => takePhoto()}>Take a photo</button> */}
-      {/* <video ref={videoRef} /> */}
       <input type="file" onChange={imgFilehandler} accept="image/*" />
-
       <canvas className="size" ref={canvasRef} width="600" height="500" />
-      {imageUrl && <img id="myimage" src={imageUrl} alt="rrr" ref={imageRef} />}
-      <div>{/* <div ref={stripRef} /> */}</div>
+      {imageUrl && <img id="myimage" src={imageUrl} alt="image" />}
       <div>{imageUrl}</div>
     </div>
   );
