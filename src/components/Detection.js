@@ -42,7 +42,7 @@ export const Detection = () => {
 
       let context = canvas.getContext("2d");
 
-      var inference = new Inference(model, canvasRef, context);
+      var inference = new Inference(model);
 
       let [bboxes, scores, classIndices] = await inference.runInference(
         imgTensor
